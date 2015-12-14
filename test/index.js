@@ -17,5 +17,8 @@ test('should support on node gt 0.11.3', function (t) {
 
 function supports () {
   var currentVersion = process.env.TRAVIS_NODE_VERSION || process.env.NVM_BIN.match(/.*v(\d+\.\d+\.\d+).*/)[1]
+  if (currentVersion.split('.').length === 2) {
+    currentVersion = currentVersion + '.0'
+  }
   return semver.gt(currentVersion, '0.11.3')
 }
