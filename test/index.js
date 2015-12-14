@@ -10,15 +10,15 @@ var semver = require('semver')
  * Tests
  */
 
-test('should support on node gt 0.11.3', function (t) {
+test('should support on node gt 4.0.0', function (t) {
   t.equal(supportsGen(), supports())
   t.end()
 })
 
 function supports () {
   var currentVersion = process.env.TRAVIS_NODE_VERSION || process.env.NVM_BIN.match(/.*v(\d+\.\d+\.\d+).*/)[1]
-  if (currentVersion.split('.').length === 2) {
+  while (currentVersion.split('.').length < 3) {
     currentVersion = currentVersion + '.0'
   }
-  return semver.gt(currentVersion, '0.11.3')
+  return semver.gt(currentVersion, '4.0.0')
 }
