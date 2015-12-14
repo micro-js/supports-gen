@@ -20,5 +20,5 @@ function supports () {
   while (currentVersion.split('.').length < 3) {
     currentVersion = currentVersion + '.0'
   }
-  return semver.gt(currentVersion, '4.0.0')
+  return semver.gte(currentVersion, '4.0.0')
 }
