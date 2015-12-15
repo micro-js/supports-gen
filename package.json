@@ -9,7 +9,8 @@
     "postversion": "git push && git push --tags && npm publish --access=public"
   },
   "dependencies": {
-    "@micro-js/evaluates": "^1.0.0"
+    "@micro-js/evaluates": "^1.0.0",
+    "@micro-js/memoize": "^1.0.0"
   },
   "devDependencies": {
     "semver": "^5.1.0",
